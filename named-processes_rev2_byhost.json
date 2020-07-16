@@ -161,7 +161,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(namedprocess_namegroup_cpu_seconds_total{groupname=~\"$processes\",instance=\"$host\"}[$interval])",
+              "expr": "sum(rate(namedprocess_namegroup_cpu_seconds_total{groupname=~\"$processes\",instance=\"$host\"}[$interval])) by (groupname)",
               "intervalFactor": 2,
               "legendFormat": "{{groupname}}",
               "metric": "process_namegroup_cpu_seconds_total",
